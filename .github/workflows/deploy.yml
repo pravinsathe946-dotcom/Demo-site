@@ -1,4 +1,4 @@
-name: Deploy WordPress Theme/Plugin
+name: Deploy to EC2
 
 on:
   push:
@@ -8,15 +8,16 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Copy files to EC2
-        uses: appleboy/ssh-action@v0.1.7
+        uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.http://13.207.64.83/ }}
-          username: deploy
-          key: ${{ secrets.l/twow4brWzy1B6ixojFyvQVBTRAnJSLV2Ud2DGa }}
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           source: "wp-content/themes/twentytwentyfour/*"
           target: "/var/www/html/wp-content/themes/twentytwentyfour/"
