@@ -11,4 +11,5 @@ get_header(); // Pulls in your site header
     <h2>Hi, this is custopm page template </h2>
 </div>
 
+
 <?php get_footer(); // Pulls in your site footer ?>
