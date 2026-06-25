@@ -21,3 +21,4 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "wp-content/themes/twentytwentyfour/*"
           target: "/var/www/html/wp-content/themes/twentytwentyfour/"
+          strip_components: 3
