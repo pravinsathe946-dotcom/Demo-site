@@ -36,7 +36,11 @@ define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
-
+define( 'AS3CF_SETTINGS', serialize( array(
+    'provider' => 'aws',
+    'access-key-id' => 'AKIA4YQACMNWRMHE2IQ7',
+    'secret-access-key' => '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',
+) ) );
 /**#@+
  * Authentication unique keys and salts.
  *
